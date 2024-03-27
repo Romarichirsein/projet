@@ -1,0 +1,3 @@
+const String supabaseUrl = 'https://bfarvmphsiwukqolyiak.supabase.co//';
+const String supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmYXJ2bXBoc2l3dWtxb2x5aWFrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE1MTE5ODMsImV4cCI6MjAyNzA4Nzk4M30.4zpeuA8F0arX8cqAduq5oC4I2IstXy9xnU0VmiYqW5Q';
