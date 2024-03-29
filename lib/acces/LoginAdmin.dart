@@ -1,6 +1,7 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:projet/Navbar%20du%20gestionnaire/NavbarAdmin.dart';
 
 class loginAdmin extends StatefulWidget {
   @override
@@ -22,9 +23,9 @@ class _loginAdminState extends State<loginAdmin> {
         width: double.infinity,
         decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-          Colors.black,
-          Color.fromARGB(255, 29, 28, 28),
-          Colors.white,
+          Colors.blueAccent,
+          const Color.fromARGB(255, 59, 136, 199),
+          Color.fromARGB(255, 243, 241, 241),
         ])),
         child: SingleChildScrollView(
           child: Form(
@@ -42,11 +43,8 @@ class _loginAdminState extends State<loginAdmin> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Log in',
+                          'Se connecter',
                           style: TextStyle(color: Colors.white, fontSize: 40),
-                        ),
-                        SizedBox(
-                          height: 10,
                         ),
                       ],
                     ),
@@ -74,7 +72,7 @@ class _loginAdminState extends State<loginAdmin> {
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     blurRadius: 20,
                                     offset: Offset(0, 10))
                               ]),
@@ -88,7 +86,7 @@ class _loginAdminState extends State<loginAdmin> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      hintText: "Email or phone number",
+                                      hintText: "Email ou numero de telephone",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
                                   validator: (value) {
@@ -110,7 +108,7 @@ class _loginAdminState extends State<loginAdmin> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      hintText: "password",
+                                      hintText: "mot de passe",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
                                   validator: (value) {
@@ -136,13 +134,34 @@ class _loginAdminState extends State<loginAdmin> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(50),
                                     color: Colors.black),
-                                child: Center(
-                                  child: Text(
-                                    "login",
-                                    style: TextStyle(
-                                        color: Colors.white,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (Content) {
+                                        return navbaradmin();
+                                      }),
+                                    );
+
+                                    if (_formKey.currentState!.validate()) {
+                                      _formKey.currentState?.save();
+                                      // Ici, je vais pouvoir ajouter la logique pour creer les livreurs
+                                      // Par exemple, envoi des données à un serveur, affichage des  livreurs, etc.
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                              content: Text(
+                                                  'Gestionnaire  créée avec succès !')));
+                                    }
+                                  },
+                                  child: Center(
+                                    child: Text(
+                                      "Se connecter",
+                                      style: TextStyle(
+                                        color: Colors.black,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),

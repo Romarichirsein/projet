@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 //https://pub.dev/packages/nb_utils
 
-class Historycolis extends StatefulWidget {
-  const Historycolis({Key? key}) : super(key: key);
+class Historylivreur extends StatefulWidget {
+  const Historylivreur({Key? key}) : super(key: key);
 
   @override
-  _HistorycolisState createState() => _HistorycolisState();
+  _HistorylivreurState createState() => _HistorylivreurState();
 }
 
-class _HistorycolisState extends State<Historycolis> {
+class _HistorylivreurState extends State<Historylivreur> {
   bool isExpanded = false;
 
   @override
@@ -16,14 +16,14 @@ class _HistorycolisState extends State<Historycolis> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Historique',
+          'Historique de mes livraisons',
           style: TextStyle(fontSize: 20),
         ),
       ),
       body: ListView.builder(
         padding: EdgeInsets.only(bottom: 30, top: 26),
         physics: BouncingScrollPhysics(),
-        itemCount: 10,
+        itemCount: 5,
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),

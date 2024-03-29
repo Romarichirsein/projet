@@ -42,8 +42,8 @@ class _logincustomerState extends State<logincustomer> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Log in',
-                          style: TextStyle(color: Colors.white, fontSize: 40),
+                          'Se connecter',
+                          style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
                         SizedBox(
                           height: 10,
@@ -73,7 +73,7 @@ class _logincustomerState extends State<logincustomer> {
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Colors.black,
+                                      color: Colors.purple,
                                       blurRadius: 20,
                                       offset: Offset(0, 10))
                                 ]),
@@ -87,8 +87,10 @@ class _logincustomerState extends State<logincustomer> {
                                               color: Color(0xFFEEEEEE)))),
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                        hintText: "Email or phone number",
-                                        hintStyle: TextStyle(color: Colors.grey),
+                                        hintText:
+                                            "Email ou numero de telephone",
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
                                         border: InputBorder.none),
                                     validator: (value) {
                                       if (value!.isEmpty) {
@@ -109,8 +111,9 @@ class _logincustomerState extends State<logincustomer> {
                                               color: Color(0xFFEEEEEE)))),
                                   child: TextFormField(
                                     decoration: InputDecoration(
-                                        hintText: "password",
-                                        hintStyle: TextStyle(color: Colors.grey),
+                                        hintText: "mot de passe",
+                                        hintStyle:
+                                            TextStyle(color: Colors.grey),
                                         border: InputBorder.none),
                                     validator: (value) {
                                       if (value!.isEmpty) {
@@ -136,17 +139,30 @@ class _logincustomerState extends State<logincustomer> {
                                       borderRadius: BorderRadius.circular(50),
                                       color: Colors.black),
                                   child: Center(
-                                    child: Text(
-                                      "login",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        if (_formKey.currentState!.validate()) {
+                                          _formKey.currentState?.save();
+                                          // Ici, je vais pouvoir ajouter la logique pour creer les livreurs
+                                          // Par exemple, envoi des données à un serveur, affichage des  livreurs, etc.
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(SnackBar(
+                                                  content: Text(
+                                                      'Client  créée avec succès !')));
+                                        }
+                                      },
+                                      child: Center(
+                                        child: Text(
+                                          "Se connecter",
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 30,
                                 ),
                               ],
                             ),

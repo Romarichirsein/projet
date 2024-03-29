@@ -4,20 +4,17 @@ import 'package:projet/Navbar%20du%20gestionnaire/deliveraccount.dart';
 import 'package:projet/Navbar%20du%20gestionnaire/history.dart';
 import 'package:projet/Navbar%20du%20gestionnaire/homeadmin.dart';
 import 'package:projet/Navbar%20du%20gestionnaire/notification.dart';
+import 'package:projet/navbarlivreur/historique.dart';
+import 'package:projet/navbarlivreur/homelivreur.dart';
 
-class navbaradmin extends StatefulWidget {
+class navbarlivreur extends StatefulWidget {
   @override
-  State<navbaradmin> createState() => _navbaradminState();
+  State<navbarlivreur> createState() => _navbarlivreurState();
 }
 
-class _navbaradminState extends State<navbaradmin> {
+class _navbarlivreurState extends State<navbarlivreur> {
   int _selectedIndex = 0; // Index initial
-  final List<Widget> _pages = [
-    MyCustomUI(),
-    comptelivreur(),
-    message(),
-    Historycolis()
-  ];
+  final List<Widget> _pages = [livreur(), Historylivreur()];
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +24,13 @@ class _navbaradminState extends State<navbaradmin> {
         children: _pages,
       ),
       bottomNavigationBar: Container(
-        color: const Color.fromRGBO(164, 200, 230, 1),
+        color: const Color.fromARGB(255, 194, 131, 49),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
           child: GNav(
-            backgroundColor: const Color.fromRGBO(164, 200, 230, 1),
+            backgroundColor: Color.fromARGB(255, 194, 131, 49),
             activeColor: Colors.white,
-            tabBackgroundColor: Colors.blue,
+            tabBackgroundColor: Colors.orange,
             padding: EdgeInsets.all(16),
             gap: 8,
             onTabChange: (index) {
@@ -43,8 +40,6 @@ class _navbaradminState extends State<navbaradmin> {
             },
             tabs: const [
               GButton(icon: Icons.home, text: 'Home'),
-              GButton(icon: Icons.delivery_dining, text: 'livreur '),
-              GButton(icon: Icons.notifications, text: 'notification'),
               GButton(icon: Icons.history, text: 'historique'),
             ],
           ),

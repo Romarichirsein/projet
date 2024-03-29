@@ -43,16 +43,12 @@ class _RegisterAdminState extends State<Registercustomer> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Register',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        "s'inscrire",
+                        style: TextStyle(color: Colors.white, fontSize: 30),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        'Welcome Administrator',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
                     ],
                   ),
                 ),
@@ -78,7 +74,7 @@ class _RegisterAdminState extends State<Registercustomer> {
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                    color: Colors.black,
+                                    color: Colors.purple,
                                     blurRadius: 20,
                                     offset: Offset(0, 10))
                               ]),
@@ -95,7 +91,7 @@ class _RegisterAdminState extends State<Registercustomer> {
                                 ),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    hintText: "Name",
+                                    hintText: "Nom",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -141,7 +137,7 @@ class _RegisterAdminState extends State<Registercustomer> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    hintText: "password",
+                                    hintText: "mot de passe",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -164,7 +160,7 @@ class _RegisterAdminState extends State<Registercustomer> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    hintText: "phone numbers",
+                                    hintText: "numero de telephone",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -191,6 +187,11 @@ class _RegisterAdminState extends State<Registercustomer> {
                                 ),
                                 child: ElevatedButton(
                                   onPressed: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (Content) {
+                                      return logincustomer();
+                                    }));
+
                                     if (_formKey.currentState!.validate()) {
                                       _formKey.currentState?.save();
                                       // Ici, je vais pouvoir ajouter la logique pour creer les livreurs
@@ -203,7 +204,7 @@ class _RegisterAdminState extends State<Registercustomer> {
                                   },
                                   child: Center(
                                     child: Text(
-                                      "Sign in",
+                                      "S'inscrire",
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -232,8 +233,8 @@ class _RegisterAdminState extends State<Registercustomer> {
                                   );
                                 },
                                 child: Text(
-                                  'Log in',
-                                  style: TextStyle(color: Colors.black),
+                                  'Se connecter',
+                                  style: TextStyle(color: Colors.purple),
                                 ),
                               )
                             ],

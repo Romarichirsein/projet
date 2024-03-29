@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,12 +5,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:projet/Navbar%20du%20gestionnaire/NavbarAdmin.dart';
 import 'package:projet/Navbar%20du%20gestionnaire/creecommande.dart';
 
-class MyCustomUI extends StatefulWidget {
+class livreur extends StatefulWidget {
   @override
-  _MyCustomUIState createState() => _MyCustomUIState();
+  _livreurState createState() => _livreurState();
 }
 
-class _MyCustomUIState extends State<MyCustomUI> with TickerProviderStateMixin {
+class _livreurState extends State<livreur> with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation1;
   late Animation<double> _animation2;
@@ -66,81 +64,57 @@ class _MyCustomUIState extends State<MyCustomUI> with TickerProviderStateMixin {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: Icon(Icons.menu_rounded),
-          splashColor: Colors.transparent,
-          onPressed: () {
-            if (_bool == true) {
-              _animationController.forward();
-            } else {
-              _animationController.reverse();
-            }
-            _bool = false;
-          },
-        ),
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        actions: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white, // Changer la couleur en blanc
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (Content) {
-                  return (OrderForm());
-                }));
-              },
-              child: Row(
-                // Utiliser un widget Row pour aligner l'icône et le texte horizontalement
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      // Utiliser un conteneur pour entourer l'icône d'un cercle bleu
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.circle,
-                      ),
-                      padding: EdgeInsets.all(10.0),
-                      alignment: Alignment
-                          .centerLeft, // Ajouter cette ligne pour centrer le contenu
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 20.0,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    "Créer commande", // Ajouter le texte "Créé"
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
+          title: Text('Home'),
+          backgroundColor: Colors.transparent,
+          leading: IconButton(
+            icon: Icon(Icons.menu_rounded),
+            splashColor: Colors.transparent,
+            onPressed: () {
+              if (_bool == true) {
+                _animationController.forward();
+              } else {
+                _animationController.reverse();
+              }
+              _bool = false;
+            },
           ),
-        ],
-      ),
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          actions: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white, // Changer la couleur en blanc
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (Content) {
+                    return (OrderForm());
+                  }));
+                },
+                child: Row(
+                    // Utiliser un widget Row pour aligner l'icône et le texte horizontalement
+
+                    ),
+              ),
+            )
+          ]),
       body: Stack(
         children: [
-          // ALWAYS PLACE IT ON THE TOP OF EVERY WIDGET...
+          // Arrière-plan
           Background(),
 
-          // EVERYTHING SHOULD BE HERE...
+          // Contenu au centre de l'écran
           Center(
-              child:
-                  Text('Aucune commande  n\'est disponible pour l\'instant')),
-          SizedBox(
-            height: _height,
-            width: _width,
-            child: null,
+            child: Text('Aucune commande n\'est disponible pour l\'instant'),
           ),
 
-          // ALWAYS PLACE IT ON THE BOTTOM OF EVERY WIDGET...
-          CustomNavigationDrawer(),
+          // Tiroir de navigation en bas de l'écran
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: CustomNavigationDrawer(),
+          ),
         ],
       ),
     );
@@ -164,7 +138,7 @@ class _MyCustomUIState extends State<MyCustomUI> with TickerProviderStateMixin {
                 width: _width * .6,
                 height: _width * 1.1,
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.3),
+                  color: Colors.orange.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(

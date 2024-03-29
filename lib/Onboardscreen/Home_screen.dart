@@ -31,25 +31,35 @@ class Homescreen extends StatelessWidget {
                   return RegisterAdmin();
                 }));
               },
-              child: Text('Administrateur'),
+              child: Text('Gestionnaire'),
             ),
             SizedBox(height: 10),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (Content) {
-                      return Signupdeliver();
-                    },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (Content) {
+                        return Signupdeliver();
+                      },
+                    ),
+                  );
+                },
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Se connecter à mon compte  ",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      TextSpan(
+                        text: "Livreur",
+                        style: TextStyle(
+                            color: Colors.red), // Exemple de style différent
+                      ),
+                    ],
                   ),
-                );
-              },
-              child: Text(
-                'Se connecter à mon compte livreur',
-                style: TextStyle(color: Colors.red),
-              ),
-            )
+                ))
           ],
         ),
       ),

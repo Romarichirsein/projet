@@ -55,7 +55,7 @@ class comptelivreur extends StatelessWidget {
             ),
           ),
         ],
-        title: Text("Deliver"),
+        title: Text("Livreur"),
         centerTitle: true,
       ),
       body: AnimationLimiter(
@@ -75,7 +75,7 @@ class comptelivreur extends StatelessWidget {
                       titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
                       content: RichText(
                         text: TextSpan(children: <TextSpan>[
-                          TextSpan(text: 'Nom: Nguemi\n\n '),
+                          TextSpan(text: 'Nom: Nguemi\n\n ',),
                           TextSpan(
                               text: '@mail: romarichirsein@gmail.com\n\n '),
                           TextSpan(text: 'telephone: 692738430\n\n '),
@@ -111,7 +111,7 @@ class comptelivreur extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: _w / 20),
                       height: _w / 4,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.blue[300],
                         borderRadius: BorderRadius.all(
                           Radius.circular(20),
                         ),

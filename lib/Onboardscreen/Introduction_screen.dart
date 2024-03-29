@@ -21,7 +21,7 @@ class IntroScreen extends StatelessWidget {
             titleTextStyle:
                 TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold))),
     PageViewModel(
-        title: 'continue.....',
+        title: '...continue...',
         body:
             'Les livreurs sont Hautements qualifiés et toujour disponibe pour effectuer vos livraisons',
         footer: const Text(''),
@@ -35,7 +35,7 @@ class IntroScreen extends StatelessWidget {
             titleTextStyle:
                 TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold))),
     PageViewModel(
-        title: 'continue.....',
+        title: '...continue...',
         body:
             'Suivez le deplacement ainsi que le statut de vos colis en temps réel',
         footer: const Text(''),
@@ -49,7 +49,7 @@ class IntroScreen extends StatelessWidget {
             titleTextStyle:
                 TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold))),
     PageViewModel(
-        title: 'Continue.....',
+        title: '...Continue...',
         body:
             'Livraison dans les délais et satisfaisantion de la clientèlle assurés   ',
         footer: const Text(''),
@@ -67,7 +67,7 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('On Boarding'),
+        title: const Text(''),
         centerTitle: true,
       ),
       body: Padding(
@@ -82,17 +82,17 @@ class IntroScreen extends StatelessWidget {
           ),
           showDoneButton: true,
           done: const Text(
-            'Done',
+            'Terminé',
             style: TextStyle(fontSize: 20),
           ),
           showSkipButton: true,
           skip: const Text(
-            'skip',
+            'Passer',
             style: TextStyle(fontSize: 20),
           ),
           showNextButton: true,
           next: const Text(
-            'Next',
+            'Suivant',
             style: TextStyle(fontSize: 20),
           ),
           onDone: () => onDone(context),
@@ -104,7 +104,7 @@ class IntroScreen extends StatelessWidget {
 
   void onDone(context) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('ON BOARDING', false);
+    await prefs.setBool('', false);
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => Homescreen()),

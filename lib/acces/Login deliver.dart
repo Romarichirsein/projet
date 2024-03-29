@@ -1,6 +1,7 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:projet/navbarlivreur/Navbarlivreur.dart';
 
 class Signupdeliver extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _SignupdeliverState extends State<Signupdeliver> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Log in',
+                        'Se connecter',
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       SizedBox(
@@ -86,7 +87,7 @@ class _SignupdeliverState extends State<Signupdeliver> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      hintText: "Email or phone number",
+                                      hintText: "Email ou numero de telephone",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
                                   validator: (value) {
@@ -108,7 +109,7 @@ class _SignupdeliverState extends State<Signupdeliver> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      hintText: "password",
+                                      hintText: "mot de passe",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none),
                                   validator: (value) {
@@ -134,13 +135,30 @@ class _SignupdeliverState extends State<Signupdeliver> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(50),
                                     color: Colors.deepOrange),
-                                child: Center(
-                                  child: Text(
-                                    "login",
-                                    style: TextStyle(
-                                        color: Colors.white,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (Content) {
+                                      return navbarlivreur();
+                                    }));
+                                    if (_formKey.currentState!.validate()) {
+                                      _formKey.currentState?.save();
+                                      // Ici, je vais pouvoir ajouter la logique pour creer les livreurs
+                                      // Par exemple, envoi des données à un serveur, affichage des  livreurs, etc.
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                              SnackBar(content: Text('')));
+                                    }
+                                  },
+                                  child: Center(
+                                    child: Text(
+                                      "Se connecter",
+                                      style: TextStyle(
+                                        color: Colors.black,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),

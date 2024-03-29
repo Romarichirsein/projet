@@ -36,7 +36,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   smooth_page_indicator: ^1.1.0
-  flutter_native_splash: ^2.4.0
   google_nav_bar: ^5.0.6
   introduction_screen: ^3.1.14
   shared_preferences: ^2.2.2
@@ -55,6 +54,27 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
+  rename_app: ^1.3.2
+  
+
+flutter_icons:
+  android: "launcher_icons"
+  ios: true
+  image_path: "assets/images/dis.png"
+
+
+flutter_native_splash:
+    color: "#FF010A2B"
+    image: assets/images/dis.png
+
+flutter_rename_app:
+  application_name: Glotelho_Dispatcher
+  dart_package_name: projet
+  application_id: com.example.projet
+  bundle_id: com.example.projet
+    
 
   
 
@@ -75,13 +95,12 @@ flutter:
      - assets/images/deliver.png
      - assets/images/Delivery-amico (1).png
      - assets/images/livraison.png
+     - assets/images/dis.png
      
   #   - images/a_dot_ham.jpeg
 
 
-flutter_native_splash:
-    color: "#FF010A2B"
-    image: assets/images/dis.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

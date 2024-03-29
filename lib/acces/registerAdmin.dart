@@ -24,9 +24,9 @@ class _RegisterAdminState extends State<RegisterAdmin> {
         width: double.infinity,
         decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topCenter, colors: [
-          Colors.black,
-          Colors.grey,
-          Colors.white,
+          Colors.blueAccent,
+          const Color.fromARGB(255, 59, 136, 199),
+          Color.fromARGB(255, 243, 241, 241),
         ])),
         child: Form(
           key: _formKey,
@@ -43,16 +43,12 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Register',
+                        "S'inscrire",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        'Welcome Administrator',
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
                     ],
                   ),
                 ),
@@ -78,7 +74,7 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     blurRadius: 20,
                                     offset: Offset(0, 10))
                               ]),
@@ -95,13 +91,13 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                 ),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    hintText: "Name",
+                                    hintText: "Nom",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'Veuillez saisir le nom du gestionnaire';
+                                      return 'Veuillez saisir le nom ';
                                     }
                                     return null;
                                   },
@@ -124,7 +120,7 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                   ),
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'Veuillez saisir l\'adresse du gestionnaire';
+                                      return 'Veuillez saisir l\'adresse ';
                                     }
                                     return null;
                                   },
@@ -141,7 +137,7 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    hintText: "password",
+                                    hintText: "mot de passe",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -164,7 +160,7 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                             color: Color(0xFFEEEEEE)))),
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    hintText: "phone numbers",
+                                    hintText: "numero de telephone",
                                     hintStyle: TextStyle(color: Colors.grey),
                                     border: InputBorder.none,
                                   ),
@@ -194,7 +190,7 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(builder: (Content) {
-                                        return navbaradmin();
+                                        return loginAdmin();
                                       }),
                                     );
 
@@ -210,7 +206,7 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                   },
                                   child: Center(
                                     child: Text(
-                                      "Sign in",
+                                      "s'inscrire",
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontSize: 16,
@@ -239,8 +235,8 @@ class _RegisterAdminState extends State<RegisterAdmin> {
                                   );
                                 },
                                 child: Text(
-                                  'Log in',
-                                  style: TextStyle(color: Colors.black),
+                                  'Se connecter',
+                                  style: TextStyle(color: Colors.blue),
                                 ),
                               )
                             ],
